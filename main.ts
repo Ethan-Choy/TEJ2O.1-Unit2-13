@@ -7,7 +7,7 @@
 
 // variables 
 let neopixelStrip: neopixel.Strip = null
-let counter: number = 0
+let counter: number = 4
 
 //cleanup
 basic.clearScreen()
@@ -26,9 +26,11 @@ input.onButtonPressed(Button.A, function() {
     neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.White))
     neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.White))
     neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.White))
-while (counter < 4) {
-     neopixelStrip.setPixelColor(counter, neopixel.colors(NeoPixelColors.Black)) }
+while (counter >= 0) {
+    neopixelStrip.setPixelColor(counter, neopixel.colors(NeoPixelColors.Black)) 
     neopixelStrip.show()
-    counter = counter +1
+    basic.showNumber(counter)
+    counter = counter -1
 }
+
 })
