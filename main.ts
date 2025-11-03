@@ -2,7 +2,7 @@
  *
  * Created by: Ethan Choy
  * Created on: Sep 2025
- * This program ...
+ * This program counts down from 4 with neopixels
 */
 
 // variables 
@@ -26,11 +26,12 @@ input.onButtonPressed(Button.A, function() {
     neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.White))
     neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.White))
     neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.White))
-while (counter >= 0) {
-    neopixelStrip.setPixelColor(counter, neopixel.colors(NeoPixelColors.Black)) 
-    neopixelStrip.show()
-    basic.showNumber(counter)
-    counter = counter -1
-}
-
+    while (counter >= 0) {
+        neopixelStrip.setPixelColor(counter, neopixel.colors(NeoPixelColors.Black)) 
+        neopixelStrip.show()
+        basic.showNumber(counter)
+        counter = counter -1
+    }
+    basic.clearScreen()
+    basic.showIcon(IconNames.Happy)
 })
